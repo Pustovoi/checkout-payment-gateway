@@ -4,13 +4,10 @@ namespace PaymentGateway.DataModel
 {
 	public class Payment : BaseEntity
 	{
+		//Comment: I decided to do not store all details and limit data by details related to card
+		//and amount of payment to do not store sensitive information Which can identify payer
+
 		public string CardNumber { get; set; }
-
-		public int CardExpirationMonth { get; set; }
-
-		public int CardExpirationYear { get; set; }
-
-		public string CardHolder { get; set; }
 
 		public decimal Amount { get; set; }
 
