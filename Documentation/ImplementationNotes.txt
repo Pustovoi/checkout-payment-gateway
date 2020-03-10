@@ -1,0 +1,25 @@
+This is one of possible implementations.
+Notes about implementation:
+- Target framework - .NET Core 2.2
+- Main solution parts:
+	- Controller with 2 endpoints to process payment and retrieve payment details by id. (Controllers)
+	- Stub for bank processing logic (Services)
+	- Payment service (Services)
+	- Data model (DataModel)
+	- Repositories to abstract interaction with data storage level (Repositories)
+	- Set of Dtos (Model)
+	- Custom validators (Validators)
+- Data storage support added (operates with InMemory database)
+- Used Autofac as an IoC container 
+- Used AutoMapper for data entities conversion 
+- Docker support added (Target - Windows containers)
+- Covered by xUnit unit tests with usage of Moq and Autofac extensions.
+
+You can find Postman collection for testing purposes in ./Postman
+See collection variables and pre-request scripts for variables
+
+Thigs which can be improved, but have not done because of lack of free time:
+- Authentication/Autorization support with 3rd party OAuth provider
+- Publishing to Azure or Docker hub
+- Logging using log4net
+- Look for possible encryption options
