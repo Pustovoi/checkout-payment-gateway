@@ -6,6 +6,7 @@ namespace PaymentGateway.DataModel
 	{
 		//Comment: I decided to do not store all details and limit data by details related to card
 		//and amount of payment to do not store sensitive information Which can identify payer
+		//Currency is string, in real case it will be another table
 
 		public string CardNumber { get; set; }
 

@@ -4,7 +4,7 @@ namespace PaymentGateway.Model
 {
 	public class BankPaymentResponseDto
 	{
-		public Guid PaymentId { get; set; }
+		public Guid ProcessingId { get; set; }
 
 		public DateTime ProcessingDate { get; set; }
 

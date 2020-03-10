@@ -16,7 +16,7 @@ namespace PaymentGateway.Services
 					return new BankPaymentResponseDto()
 					{
 						IsProcessed = true,
-						PaymentId = Guid.NewGuid(),
+						ProcessingId = Guid.NewGuid(),
 						ProcessingDate = DateTime.UtcNow
 					};
 				}
