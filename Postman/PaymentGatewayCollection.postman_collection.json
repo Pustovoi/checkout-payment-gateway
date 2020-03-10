@@ -1,0 +1,107 @@
+{
+	"info": {
+		"_postman_id": "b6f0373f-047b-4c36-8890-a22aa3c7a60e",
+		"name": "PaymentGatewayCollection",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "GetPaymentDetails",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "b01b4ed2-377a-409a-8e67-12a014fa51f4",
+						"exec": [
+							"pm.environment.set(\"id\", \"1\");"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://{{hostName}}/api/Payments/{{id}}",
+					"protocol": "https",
+					"host": [
+						"{{hostName}}"
+					],
+					"path": [
+						"api",
+						"Payments",
+						"{{id}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "ProcessPayment",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"CardNumber\" : \"4444333322221111\",\n\t\"CardExpirationMonth\" : \"10\",\n\t\"CardExpirationYear\" : \"25\",\n\t\"CardCvv\" : \"123\",\n\t\"CardHolder\" : \"Card Holder\",\n\t\"Amount\" : 30,\n\t\"Currency\" : \"EUR\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://{{hostName}}/api/payments",
+					"protocol": "https",
+					"host": [
+						"{{hostName}}"
+					],
+					"path": [
+						"api",
+						"payments"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"id": "450290ff-87a2-4de9-81de-e370a5b29561",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"id": "30f4c565-0ab2-4a63-b36c-e4572c302021",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"id": "803bade8-c769-4b25-a56f-671be405dbd1",
+			"key": "hostName",
+			"value": "172.27.123.87",
+			"type": "string"
+		}
+	],
+	"protocolProfileBehavior": {}
+}
